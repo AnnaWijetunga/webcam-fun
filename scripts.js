@@ -22,6 +22,8 @@ function getVideo() {
             // console.log(localMediaStream);
             // video has to be converted into a url
             // original version of this was depreciated - need to update now
+            // couldn't figure this out for now, but refer to here for more guidance: https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject
+            const video = document.createElement('video')
             video.src = localMediaStream;
             video.play();
         })
