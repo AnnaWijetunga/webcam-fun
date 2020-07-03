@@ -35,7 +35,13 @@ function paintToCanvas() {
     const height = video.videoHeight
     canvas.width = width;
     canvas.height = height;
-    console.log(width, height);
+    // console.log(width, height);
+
+    // every 16 miliseconds, take image from webcam and paint to canvas
+    setInterval(() => {
+        // pass in an image, and it'll paint it
+        ctx.drawImage(video, 0, 0, width, height)
+    }, 16);
 }
  
 // call the function
