@@ -58,7 +58,8 @@ function takePhoto() {
     const link = document.createElement('a');
     link.href = data;
     link.setAttribute('download', 'handsome');
-    link.textContent = 'Download Image';
+    // to allow user to download the image
+    link.innerHTML = `<img src="${data} alt="Handsome Woman" />`;
     strip.insertBefore(link, strip.firstChild);
 }
 
