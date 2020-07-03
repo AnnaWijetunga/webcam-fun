@@ -4,7 +4,10 @@ const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 
-
+// typed npm install in temrminal
+// then npm start
+// for this lesson and b/c of the webcam, we need to run this through a local server, not just a file (like index.html)
+// control + c to quit the server
 
 
 
