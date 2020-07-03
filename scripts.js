@@ -52,8 +52,8 @@ function takePhoto() {
 // call the function
 getVideo();
 
-
-
+// listen for a video being played and then paint to canvas
+video.addEventListener('canplay', paintToCanvas);
 
 
 
