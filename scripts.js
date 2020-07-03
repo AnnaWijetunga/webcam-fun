@@ -23,8 +23,15 @@ function getVideo() {
             // video has to be converted into a url
             video.src = window.URL.createObjectURL(localMediaStream);
             video.play();
-        });
+        })
+        // in case you don't have access to someone's webcam, display an error message
+        .catch(err => {
+            console.error('OH NO!', err);
+        })
 }
+
+
+ 
 
 // call the function
 getVideo();
