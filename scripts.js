@@ -41,10 +41,20 @@ function paintToCanvas() {
     // console.log(width, height);
 
     // every 16 miliseconds, take image from webcam and paint to canvas
-    setInterval(() => {
-        // pass in an image, and it'll paint it
-        ctx.drawImage(video, 0, 0, width, height)
-    }, 16);
+    return setInterval(() => {
+        ctx.drawImage(video, 0, 0, width, height);
+        // take the pixels out
+        let pixels = ctx.getImageData(0, 0, width, height);
+        // mess with them
+        // pixels = redEffect(pixels);
+    
+        pixels = rgbSplit(pixels);
+        // ctx.globalAlpha = 0.8;
+    
+        // pixels = greenScreen(pixels);
+        // put them back
+        ctx.putImageData(pixels, 0, 0);
+      }, 16);
 }
  
 function takePhoto() {
@@ -62,6 +72,10 @@ function takePhoto() {
     link.innerHTML = `<img src="${data} alt="Handsome Woman" />`;
     strip.insertBefore(link, strip.firstChild);
 }
+
+// filters
+// get the pixels out of the canvas, mess with 'em, put them back in
+
 
 // call the function
 getVideo();
