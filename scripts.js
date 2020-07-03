@@ -33,6 +33,8 @@ function getVideo() {
 function paintToCanvas() {
     const width = video.videoWidth
     const height = video.videoHeight
+    canvas.width = width;
+    canvas.height = height;
     console.log(width, height);
 }
  
