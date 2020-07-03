@@ -19,10 +19,10 @@ function getVideo() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: false })
     // returns a promise
         .then(localMediaStream => {
-            console.log(localMediaStream);
+            // console.log(localMediaStream);
             // video has to be converted into a url
             // original version of this was depreciated - need to update now
-            video.src = HTMLMediaElement(localMediaStream);
+            video.src = localMediaStream;
             video.play();
         })
         // in case you don't have access to someone's webcam, display an error message
